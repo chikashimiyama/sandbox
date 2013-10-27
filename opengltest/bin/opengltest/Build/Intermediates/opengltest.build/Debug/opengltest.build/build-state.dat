@@ -1,0 +1,83 @@
+Topengltest
+v5
+r1
+cCheck dependencies
+cCompileC bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/Objects-normal/x86_64/main.o /Users/chikashi/Development/sandbox/opengltest/opengltest/main.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Products/Debug/opengltest normal x86_64
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c000000005130312F00000000000000AA
+t1362112815
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/GLUT.framework/GLUT
+c0000000051B4C0AD0000000000014030
+t1370800301
+s81968
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
+c0000000051B4C0BF000000000000ADDC
+t1370800319
+s44508
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/stdio.h
+c0000000051B4C10D0000000000004523
+t1370800397
+s17699
+
+N/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/Objects-normal/x86_64/main.o
+t1382136274
+s3924
+
+N/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/Objects-normal/x86_64/opengltest.LinkFileList
+c000000005261B65E0000000000000097
+t1382135390
+s151
+
+N/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Products/Debug/opengltest
+t1382136274
+s9216
+
+N/Users/chikashi/Development/sandbox/opengltest/opengltest/main.c
+c000000005261B9E50000000000000379
+t1382136293
+s889
+i<stdio.h>
+
+CBuild AST from /Users/chikashi/Development/sandbox/opengltest/opengltest/main.c
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies44508d65f111b841^c68b8d65f111b841^---0#1#0#--18"Check dependencies36"30370ACE-D870-4A75-B7CA-6F19ACC76781-
+
+CCompileC bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/Objects-normal/x86_64/main.o /Users/chikashi/Development/sandbox/opengltest/opengltest/main.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+s403829093.554680
+e403829093.588315
+r1
+xCompileC
+xbin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/Objects-normal/x86_64/main.o
+x/Users/chikashi/Development/sandbox/opengltest/opengltest/main.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/chikashi/Development/sandbox/opengltest/opengltest/main.c:17:21: warning: passing 'const char **' to parameter of type 'char **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types]
+o    glutInit(&argc, argv);
+o                    ^~~~
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:431:50: note: passing argument to parameter 'argv' here
+oextern void APIENTRY glutInit(int *argcp, char **argv);
+o                                                 ^
+o1 warning generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compile /Users/chikashi/Development/sandbox/opengltest/opengltest/main.c44158e65f111b841^5a9b9665f111b841^-602"/Users/chikashi/Development/sandbox/opengltest/opengltest/main.c:17:21: warning: passing 'const char **' to parameter of type 'char **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types]    glutInit(&argc, argv);                    ^~~~/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:431:50: note: passing argument to parameter 'argv' hereextern void APIENTRY glutInit(int *argcp, char **argv);                                                 ^1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@98"Passing 'const char **' to parameter of type 'char **' discards qualifiers in nested pointer types-403829093#18446744073709551615#0#1(2@41"Passing argument to parameter 'argv' here-403829093#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@170"file://localhost/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^430#49#430#49#12866#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@80"file://localhost/Users/chikashi/Development/sandbox/opengltest/opengltest/main.c0000000000000000^16#20#16#20#302#0#14"Semantic Issue1(3@80"file://localhost/Users/chikashi/Development/sandbox/opengltest/opengltest/main.c0000000000000000^16#20#16#24#302#0#-0#0#0#-19%DVTDocumentLocation4@80"file://localhost/Users/chikashi/Development/sandbox/opengltest/opengltest/main.c0000000000000000^3070"CompileC bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/Objects-normal/x86_64/main.o opengltest/main.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/chikashi/Development/sandbox/opengltest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -iquote /Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/opengltest-generated-files.hmap -I/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/opengltest-own-target-headers.hmap -I/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/opengltest-all-target-headers.hmap -iquote /Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/opengltest-project-headers.hmap -I/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/DerivedSources/x86_64 -I/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/DerivedSources -F/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Products/Debug -MMD -MT dependencies -MF /Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/Objects-normal/x86_64/main.dia -c /Users/chikashi/Development/sandbox/opengltest/opengltest/main.c -o /Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/Objects-normal/x86_64/main.o36"DB45CE08-8CA0-46AE-863A-0229E5FDB660-
+
+CLd /Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Products/Debug/opengltest normal x86_64
+s403829093.594976
+e403829093.618987
+r1
+xLd
+x/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Products/Debug/opengltest
+xnormal
+xx86_64
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Link /Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Products/Debug/opengltest1daf9865f111b841^ab759e65f111b841^---0#0#0#--883"Ld bin/opengltest/Build/Products/Debug/opengltest normal x86_64    cd /Users/chikashi/Development/sandbox/opengltest    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Products/Debug -F/Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Products/Debug -filelist /Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Intermediates/opengltest.build/Debug/opengltest.build/Objects-normal/x86_64/opengltest.LinkFileList -mmacosx-version-min=10.8 -framework OpenGL -framework GLUT -o /Users/chikashi/Development/sandbox/opengltest/bin/opengltest/Build/Products/Debug/opengltest36"F57027B8-D101-4597-B6C3-45E286369668-
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<spatdif version="0.3">
+	<meta>
+		<info>
+			<annotation>this is a simple spatdif scene with 3 sources</comment>
+			<date>2011-04-14</date>
+			<author>jasch</author>
+		</info>
+		<ordering>time</ordering>
+	</meta>
+
+	<time>0.0</time> <!-- default -->
+		<source> 
+			<name>1</name>
+			<position>-1.41 1.41 0.0</position> <!-- defaults to 0. 0. 0. type xyz -->
+			<media>
+				<type>file</type> <!-- defaults to none -->
+				<location>../audio/hello.wav</location>
+				<gain>1.0</gain> <!-- default -->
+			</media>
+		</source>
+	</time>	
+
+	<time>1.0</time> <!-- source is placed at time: 1.0 seconds -->
+		<source>
+			<name>2</name>
+			<position>1.41 1.41 0.0</position>
+			<media>
+				<type>file</type>
+				<location>../audio/salut.wav</location>
+			</media>
+		</source>
+	</time>
+
+	<time>2.0</time> <!-- source is placed at time: 2.0 seconds -->
+	 	<source>
+			<name>3</name>		
+			<position>0.0 1.0 0.0</position>
+			<media>
+				<type>file</type>
+				<location>../audio/salut.wav</location>
+				<gain unit="db">-3.0</gain>			
+			</media>
+		</source>
+	</time>	
+</spatdif>
