@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		621F23D51811ED440017C57C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 621F23D41811ED440017C57C /* main.c */; };
 		621F23D71811ED440017C57C /* opengltest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 621F23D61811ED440017C57C /* opengltest.1 */; };
+		621F23E01811EDBE0017C57C /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621F23DE1811EDBE0017C57C /* GLUT.framework */; };
+		621F23E21811EDCE0017C57C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621F23E11811EDCE0017C57C /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,9 @@
 		621F23D11811ED440017C57C /* opengltest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = opengltest; sourceTree = BUILT_PRODUCTS_DIR; };
 		621F23D41811ED440017C57C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		621F23D61811ED440017C57C /* opengltest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = opengltest.1; sourceTree = "<group>"; };
+		621F23DD1811EDBE0017C57C /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = System/Library/Frameworks/AGL.framework; sourceTree = SDKROOT; };
+		621F23DE1811EDBE0017C57C /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		621F23E11811EDCE0017C57C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				621F23E21811EDCE0017C57C /* OpenGL.framework in Frameworks */,
+				621F23E01811EDBE0017C57C /* GLUT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,9 @@
 		621F23C81811ED440017C57C = {
 			isa = PBXGroup;
 			children = (
+				621F23E11811EDCE0017C57C /* OpenGL.framework */,
+				621F23DD1811EDBE0017C57C /* AGL.framework */,
+				621F23DE1811EDBE0017C57C /* GLUT.framework */,
 				621F23D31811ED440017C57C /* opengltest */,
 				621F23D21811ED440017C57C /* Products */,
 			);
