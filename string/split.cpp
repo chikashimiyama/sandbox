@@ -13,5 +13,12 @@ int main(){
 	iss >> split;
 	cout << split << endl;
     }
+
+    string s1 = "miyama";
+    string s2 = "chikashi";
+
+    if(s1 < s2){
+	cout << "true" << endl;
+    }
     return 0;
 }
