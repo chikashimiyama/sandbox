@@ -7,14 +7,19 @@
 #include <ctime>
 #include <cstdio>
 
+#define NUM_ELEMENT 10000
 using namespace std;
 using namespace cl;
-float randomNums[10000];
+int ascending[NUM_ELEMENT];
+int result[NUM_ELEMENT];
 
 int main(void){
 
 	std::vector<Platform> plats; 
 	Platform::get(&plats);
+   //opencl
+    std::clock_t start;
+    double duration;
 
     cl_int err = CL_SUCCESS;
 
@@ -37,56 +42,43 @@ int main(void){
         srcFile.close();
     }
 
-	for(int i = 0; i < 10000; i++){
-		randomNums[i] = static_cast<float>(rand() /1000000.0);
+	for(int i = 0; i < NUM_ELEMENT; i++){
+		ascending[i] = i;
 	}
-    float result = 0.0;
-
-
 
 	cl_context_properties properties[] = { CL_CONTEXT_PLATFORM, (cl_context_properties)(plats[0])(), 0};
     Context context(CL_DEVICE_TYPE_GPU, properties); 
     std::vector<Device> devices = context.getInfo<CL_CONTEXT_DEVICES>();
     Device default_device = devices[0];
-	Buffer buffer_A(context,CL_MEM_READ_WRITE,sizeof(float)*10000);
-    Buffer buffer_B(context,CL_MEM_READ_WRITE,sizeof(float));
-
+	Buffer buffer_A(context,CL_MEM_READ_WRITE,sizeof(int)*NUM_ELEMENT);
+    Buffer buffer_B(context,CL_MEM_READ_WRITE,sizeof(int)*NUM_ELEMENT);
 
     Program::Sources source(1, std::make_pair(srcString.c_str(),srcString.size()));
     Program program = Program(context, source);
     if(program.build(devices) != CL_SUCCESS){
-        std::cout<<" Error building: "<<program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(default_device)<<"\n";
+        std::cout<<" Error building: "<<program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(default_device)<< endl;
         exit(1);
     }
 
-    //opencl
-    std::clock_t start;
-    double duration;
-    start = std::clock();
+ 
 
     CommandQueue queue(context,default_device);
-    queue.enqueueWriteBuffer(buffer_A,CL_TRUE,0,sizeof(float)*10000,randomNums);
-    queue.enqueueWriteBuffer(buffer_B,CL_TRUE,0,sizeof(float),&result);
+    queue.enqueueWriteBuffer(buffer_A,CL_TRUE,0,sizeof(int)*NUM_ELEMENT,ascending);
 
-    Kernel kn = Kernel(program, "average");
-    KernelFunctor average(kn , queue, NullRange, NDRange(10), NullRange);
-    average(buffer_A, buffer_B);
-    queue.enqueueReadBuffer(buffer_B,CL_TRUE,0,sizeof(float), &result);
-    
-    cout << "OpenCL average:" << result << endl;
-    duration = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-    cout << "elapsed time: " << duration << "secs." << endl;
-    
-    //cpu
     start = std::clock();
-    float sum = 0.0;
-    for (int i = 0; i < 10000; ++i)
-    {
-    	sum += randomNums[i];
-    }
-   	result = sum / 10000;
-    cout << "CPU average:" << result << endl;
+    Kernel kn = Kernel(program, "average");
+    KernelFunctor average(kn , queue, NullRange, NDRange(NUM_ELEMENT), NullRange);
+    average(buffer_A, buffer_B);
+    queue.enqueueReadBuffer(buffer_B,CL_TRUE,0,sizeof(int)*NUM_ELEMENT, &result);
     duration = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+
+    cout << "OpenCL result:" << endl;
+    for(int i = 0; i < NUM_ELEMENT; i++){
+    	cout << "index:" << i << " value:" << result[i] << endl;
+    }
+
     cout << "elapsed time: " << duration << "secs." << endl;
+    
+   
     return 0;
 }
