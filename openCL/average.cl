@@ -1,7 +1,10 @@
 
+
+__constant int table[] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160};
+
 __kernel void d1Count( __global int* incoming, __global int* result){
 	int id = get_global_id(0);
-	result[id] =  id;
+	result[id] =  table[id];
 }
 __kernel void d2Count( __global int* incoming, __global int* result){
 	int x = get_global_id(0);
@@ -51,5 +54,21 @@ __kernel void locTest( __global int* incoming, __global int* result){
 		}
 		result[0] = sum;
 	}
-
 }
+
+__kernel void size( __global int* incoming, __global int* result){
+	int size = get_global_size(0);
+	int id = get_global_id(0);
+	result[id] = size;
+}
+
+__kernel void atomic( __global int* incoming, __global int* result){
+	int id = get_global_id(0);
+	int temp;
+	temp = atomic_inc(&incoming[0]);
+	/*incoming[0]++;*/
+	result[id] = temp;
+}
+
+
+

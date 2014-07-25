@@ -2,6 +2,8 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#pragma OPENCL EXTENSION cl_khr_global_int32_base_atomics : enable
+
 using namespace cl;
 using namespace std;
 
@@ -65,6 +67,7 @@ int main(void){
 	while(it != devs.end()){
 		Device dv = *it;
 		cout << "------- device " << devId << "------" << endl;
+        cout << "address bits:" << static_cast<int>(dv.getInfo<CL_DEVICE_ADDRESS_BITS>()) << endl;
 		cout << "device name:" << dv.getInfo<CL_DEVICE_NAME>() << endl;
 		cout << "device type:" << dv.getInfo<CL_DEVICE_TYPE>() << endl;
 		cout << "device vendor:" << dv.getInfo<CL_DEVICE_VENDOR>() << endl;
@@ -73,7 +76,15 @@ int main(void){
 		cout << "max image width:" << dv.getInfo<CL_DEVICE_IMAGE2D_MAX_WIDTH>() << endl;
 		cout << "max image height:" << dv.getInfo<CL_DEVICE_IMAGE2D_MAX_HEIGHT>() << endl;
 		cout << "global mem size:" << dv.getInfo<CL_DEVICE_GLOBAL_MEM_SIZE>()/1024/1024 << "mb"<<endl;
-
+        cout << "local mem size:" << dv.getInfo<CL_DEVICE_LOCAL_MEM_SIZE>()/1024 << "kb"<<endl;
+        cout << "max memory object size:" << dv.getInfo<CL_DEVICE_MAX_MEM_ALLOC_SIZE>()/1024/1024 << "mb"<<endl;
+        cout << "max work group size:" << dv.getInfo<CL_DEVICE_MAX_WORK_GROUP_SIZE>()<< endl;
+        int dimen = dv.getInfo<CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS>();
+        cout << "max work item dim:" << dimen << endl;
+        std::vector<std::size_t> witems = dv.getInfo<CL_DEVICE_MAX_WORK_ITEM_SIZES>();
+        for (int i = 0; i < dimen; ++i){
+            std::cout << "max work item size dim:" << i << " " <<  witems[i] << endl;
+        }
 		it++;
 		devId++;
 	}
@@ -97,8 +108,11 @@ int main(void){
     Kernel kernelD3(program, "d3Count", &err);
     Kernel kernelSum(program, "sum", &err);
     Kernel kernelLocal(program, "locTest", &err);
+    Kernel kernelSize(program, "size", &err);
+    Kernel kernelAtomic(program, "atomic", &err);
+
     Event event;
-    int array [16] = {1 ,3, 5, 2, 4, 9, 14, 33, 22, 1, 5, 23, 42, 33, 22, 11};
+    int array [16] = {0 ,3, 5, 2, 4, 9, 14, 33, 22, 1, 5, 23, 42, 33, 22, 11};
     int result[16];
 
 	Buffer inputBufferCL(context,CL_MEM_READ_WRITE,sizeof(int)*16);
@@ -115,8 +129,12 @@ int main(void){
     kernelD3.setArg(1, outputBufferCL); 
     kernelSum.setArg(0, inputBufferCL);
     kernelSum.setArg(1, outputBufferCL); 
+    kernelSize.setArg(0, inputBufferCL);
+    kernelSize.setArg(1, outputBufferCL);
     kernelLocal.setArg(0, inputBufferCL);
-    kernelLocal.setArg(1, outputBufferCL); 
+    kernelLocal.setArg(1, outputBufferCL);
+    kernelAtomic.setArg(0, inputBufferCL);
+    kernelAtomic.setArg(1, outputBufferCL);
 
     queue.enqueueNDRangeKernel(kernelD1, NullRange, NDRange(16),NullRange,NULL,&event); 
     queue.enqueueReadBuffer(outputBufferCL, CL_TRUE, 0, sizeof(int) * 16, result, NULL, &event);  
@@ -134,6 +152,18 @@ int main(void){
     printArray(result);
 
     queue.enqueueNDRangeKernel(kernelLocal, NullRange, NDRange(16),NDRange(4),NULL,&event); 
+    queue.enqueueReadBuffer(outputBufferCL, CL_TRUE, 0, sizeof(int) * 16, result, NULL, &event);  
+    event.wait();
+    printArray(result); 
+
+    cout << "size" << endl;
+    queue.enqueueNDRangeKernel(kernelSize, NullRange, NDRange(16), NullRange,NULL,&event); 
+    queue.enqueueReadBuffer(outputBufferCL, CL_TRUE, 0, sizeof(int) * 16, result, NULL, &event);  
+    event.wait();
+    printArray(result); 
+
+    cout << "atomic" << endl;
+    queue.enqueueNDRangeKernel(kernelAtomic, NullRange, NDRange(16), NullRange,NULL,&event); 
     queue.enqueueReadBuffer(outputBufferCL, CL_TRUE, 0, sizeof(int) * 16, result, NULL, &event);  
     event.wait();
     printArray(result); 
