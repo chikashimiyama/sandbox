@@ -110,13 +110,16 @@ int main(void){
     Kernel kernelLocal(program, "locTest", &err);
     Kernel kernelSize(program, "size", &err);
     Kernel kernelAtomic(program, "atomic", &err);
+    Kernel kernelSFU(program, "sfu", &err);
 
     Event event;
     int array [16] = {0 ,3, 5, 2, 4, 9, 14, 33, 22, 1, 5, 23, 42, 33, 22, 11};
     int result[16];
+    float sinResult[100000];
 
 	Buffer inputBufferCL(context,CL_MEM_READ_WRITE,sizeof(int)*16);
 	Buffer outputBufferCL(context, CL_MEM_READ_WRITE, sizeof(int) * 16);
+    Buffer outputSinCL(context, CL_MEM_READ_WRITE, sizeof(float) * 100000);
     CommandQueue queue(context, devices[0], 0, &err);
 
 	queue.enqueueWriteBuffer(inputBufferCL, CL_TRUE, 0, sizeof(int) * 16, array, NULL, &event);
@@ -135,6 +138,7 @@ int main(void){
     kernelLocal.setArg(1, outputBufferCL);
     kernelAtomic.setArg(0, inputBufferCL);
     kernelAtomic.setArg(1, outputBufferCL);
+    kernelSFU.setArg(0, outputSinCL);
 
     queue.enqueueNDRangeKernel(kernelD1, NullRange, NDRange(16),NullRange,NULL,&event); 
     queue.enqueueReadBuffer(outputBufferCL, CL_TRUE, 0, sizeof(int) * 16, result, NULL, &event);  
@@ -168,8 +172,21 @@ int main(void){
     event.wait();
     printArray(result); 
 
+    clock_t t;
+    cout << "sfu" << endl;
+    t = clock();
+    queue.enqueueNDRangeKernel(kernelSFU, NullRange, NDRange(100000), NullRange,NULL,&event); 
+    event.wait();
+    t = clock() - t;
+    cout <<  "GPU:" << (float)t/(CLOCKS_PER_SEC) * 1000.0 << endl;;
+    queue.enqueueReadBuffer(outputSinCL, CL_TRUE, 0, sizeof(int) * 100000, sinResult, NULL, &event);  
+    event.wait();
+
+    for(int i = 0; i < 100000; i++){
+        cout << sinResult[i] << endl;
+    }
+
     cl_int x = 0;
-    queue.enqueueWriteBuffer(outputBufferCL, CL_TRUE, 0, sizeof(int), &x, NULL, &event);
     queue.enqueueNDRangeKernel(kernelSum, NullRange, NDRange(16), NullRange, NULL, &event);
     queue.enqueueReadBuffer(outputBufferCL, CL_TRUE, 0, sizeof(int), result, NULL, &event);  
     event.wait();

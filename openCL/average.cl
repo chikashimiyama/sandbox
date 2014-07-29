@@ -70,5 +70,9 @@ __kernel void atomic( __global int* incoming, __global int* result){
 	result[id] = temp;
 }
 
+__kernel void SFU( __global float* result){
+	int id = get_global_size(0);
+	result[id] = sin(0.5);
 
+}
 
