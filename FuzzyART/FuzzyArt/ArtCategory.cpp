@@ -1,10 +1,10 @@
 #include "ArtCategory.h"
 #include <cmath>
 
-ArtCategory::ArtCategory(int dim){   
+ArtCategory::ArtCategory(int dim){
     committed = false;
     if(dim > 0){
-       weighting.resize(dim * 2); // because of complemented code
+       weighting.resize(dim * 2); // because of complement code
     }else{
     	weighting.clear();
 	}
@@ -20,11 +20,10 @@ ArtCategory::ArtCategory(int dim){
 
 // calculate the mChoice match factor for this category and the given input
 double ArtCategory::choose(std::vector<double> input, double mChoice){
-    int i;
     double minTotal = 0;
-    int size = input.size();
+    size_t size = input.size(); // dim * 2
 
-    for (i = 0; i < size; i++){
+    for (int i = 0; i < size; i++){
         // if the inputN is less than weightingN add inputN otherwise add weightingN
         minTotal += (input[i] < weighting[i] ? input[i] : weighting[i]);
     }
@@ -34,59 +33,75 @@ double ArtCategory::choose(std::vector<double> input, double mChoice){
 bool ArtCategory::mVigilance(const std::vector<double>input, double mVigilance){
     double minTotal = 0;
     double inputTotal = 0;
-    int size = input.size();
-    for (int i = 0; i < size; i++){
+    size_t size = input.size();
+
+    // compare input vector and weighting vector and accumalate the smaller values
+    for(int i = 0; i < size; i++){
         minTotal += (input[i] < weighting[i] ? input[i] : weighting[i]);
         inputTotal += input[i];
     }
-    // if the value is greater than the vigilance return true
     return (minTotal / inputTotal >= mVigilance);
 }
 
+// get vigilance against input vector
 double ArtCategory::getVigilance(const std::vector<double> input){
     double minTotal = 0;
     double inputTotal = 0;
-    size_t dim = input.size();
-    for (int i = 0; i < dim; i++){
+    size_t cnt = input.size();
+    
+    // compare input vector and weighting vector and accumalate the smaller value
+    for (int i = 0; i < cnt; i++){
         minTotal += (input[i] < weighting[i] ? input[i] : weighting[i]);
         inputTotal += input[i];
     }
+    
+    // divide mintotal by input total
     return minTotal / inputTotal;
 }
 
 double ArtCategory::learn(std::vector<double>input, double mLearnRate){
+
+    // 1. check the size
     if(!isSameSize(weighting, input)){
         return -1;
-    }    
-    size_t dim = input.size();
-    std::vector<double> newWeighting(dim);
-    double residual = 0;
-    if (!committed){
+    }
+    
+    // 2. allocate new weighting vector
+    size_t size = input.size();
+    std::vector<double> newWeighting(size);
+    if (!committed){ // if this is the first time learn purely from the input
         mLearnRate = 1;
         committed = true; // toggle flag
     }
+    
+    // 3. calculate new weighitng by comparing input and current weighting
     double inverseLearnRate = 1.0 - mLearnRate;
-    for (int i = 0; i < dim; i++){
+    for (int i = 0; i < size; i++){
         // compare input and weighting one by one and take smaller one
         // then bias with "learnRate"
         // if the learnRate is low, the value in weighting retains more: like an old stubborn guy!
-        newWeighting[i] = mLearnRate * (input[i] < weighting[i] ? input[i] : weighting[i]) 
+        newWeighting[i] =
+        mLearnRate * (input[i] < weighting[i] ? input[i] : weighting[i])
         + inverseLearnRate * weighting[i];
     }
-    // calculate residual
+    
+    // 2. calculate residual and update weighting
     // residual is sum of difference between new and old Weightings
-    // if residual is big, many memories were rewritten 
-    for (int i = 0; i < dim; i++){
+    // if residual is big, many memories were rewritten
+    double residual = 0;
+    for (int i = 0; i < size; i++){
         residual += weighting[i] - newWeighting[i];
         weighting[i] = newWeighting[i];
     }
-    sum = 0;	
-    // now update the total for this category
-    for (int i = 0; i < dim; i++){
+    
+    // 3. now update the sum for this category
+    sum = 0;
+    for (int i = 0; i < size; i++){
         sum += weighting[i];
     }
-    // output average residual
-    return residual / (dim * 0.5);
+    
+    // 4. output average residual
+    return residual / (size / 2);
 
 }
 
@@ -110,7 +125,7 @@ double ArtCategory::getResidual(std::vector<double> input, double mLearnRate){
 
 double ArtCategory::distance( std::vector<double> input){
     // take the not complemented part
-    int featureLength = weighting.size() / 2;	// how many elements in the pre-complement coded std::vector?
+    int featureLength = static_cast<int>(weighting.size()) / 2;	// how many elements in the pre-complement coded std::vector?
     if(input.size() != featureLength){
         std::cout << "input length " << input.size() << " does not match" << std::endl;
         return -1.0;
@@ -132,7 +147,7 @@ double ArtCategory::distance( std::vector<double> input){
 
 void ArtCategory::resize(int newSize){
     int newDim = newSize * 2;
-    int oldDim = weighting.size();
+    int oldDim = static_cast<int>(weighting.size());
     if(newDim == oldDim){
         return;
     }

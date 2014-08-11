@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8461D8B5-6069-4D26-BCD0-6746F1C353E7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FuzzyART</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DA6E5DBE-C8FC-4B51-9711-CD2EEC821A4E</key>
+		<string>https://github.com/chikashimiyama/sandbox.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FuzzyART/FuzzyART/FuzzyART.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DA6E5DBE-C8FC-4B51-9711-CD2EEC821A4E</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/chikashimiyama/sandbox.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DA6E5DBE-C8FC-4B51-9711-CD2EEC821A4E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DA6E5DBE-C8FC-4B51-9711-CD2EEC821A4E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FuzzyArt</string>
+		</dict>
+	</array>
+</dict>
+</plist>

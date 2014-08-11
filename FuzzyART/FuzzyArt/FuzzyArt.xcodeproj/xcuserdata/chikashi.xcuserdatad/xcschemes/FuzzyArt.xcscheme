@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "62271A971996098800481ADA"
-               BuildableName = "FuzzyArt"
-               BlueprintName = "FuzzyArt"
-               ReferencedContainer = "container:FuzzyArt.xcodeproj">
+               BlueprintIdentifier = "62271AD519960FB200481ADA"
+               BuildableName = "FuzzyART"
+               BlueprintName = "FuzzyART"
+               ReferencedContainer = "container:FuzzyART.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "62271A971996098800481ADA"
-            BuildableName = "FuzzyArt"
-            BlueprintName = "FuzzyArt"
-            ReferencedContainer = "container:FuzzyArt.xcodeproj">
+            BlueprintIdentifier = "62271AD519960FB200481ADA"
+            BuildableName = "FuzzyART"
+            BlueprintName = "FuzzyART"
+            ReferencedContainer = "container:FuzzyART.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "62271A971996098800481ADA"
-            BuildableName = "FuzzyArt"
-            BlueprintName = "FuzzyArt"
-            ReferencedContainer = "container:FuzzyArt.xcodeproj">
+            BlueprintIdentifier = "62271AD519960FB200481ADA"
+            BuildableName = "FuzzyART"
+            BlueprintName = "FuzzyART"
+            ReferencedContainer = "container:FuzzyART.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "62271A971996098800481ADA"
-            BuildableName = "FuzzyArt"
-            BlueprintName = "FuzzyArt"
-            ReferencedContainer = "container:FuzzyArt.xcodeproj">
+            BlueprintIdentifier = "62271AD519960FB200481ADA"
+            BuildableName = "FuzzyART"
+            BlueprintName = "FuzzyART"
+            ReferencedContainer = "container:FuzzyART.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

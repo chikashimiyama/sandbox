@@ -9,74 +9,53 @@ void FuzzyArt::reset(){
     inputVector.clear();
     inputVector.resize(dimensions*2); // because of complemented code
 
-    choiceSize = 1;
     recentChoice = -1;
     acVector.clear();
     acVector.push_back(ArtCategory(dimensions));
 }
 
 int FuzzyArt::predict(std::vector<double> inv){
-    setInput(inv);
-    normalizeInput();
-    complementCode();
-    fillCategoryChoice();    
-    makeChoice(vigilance);
-    return recentChoice;
+    setInput(inv); // copy input vector to the buffer, normalize, and prepare the complement code
+    fillCategoryChoice(); // check the distance between input and each cateory
+    makeChoice(vigilance); // make final prediction, update recent Choice, if the input is far from all existing AC make new one, depending on vigilance
+    
+    return recentChoice; // return result
 }
 
-void FuzzyArt::setInput(std::vector<double> in){ // input is without complemented code
+// process input vector
+void FuzzyArt::setInput(std::vector<double> inv){ // input is without complemented code
 
-    dimensions = in.size(); // without complemented code
-    inputVector.resize(dimensions * 2); // because of complemented code
-
-    //resize the dimension of all ACs if necessary
-    std::vector<ArtCategory>::iterator it = acVector.begin();
-    while(it != acVector.end()){
-        (*it).resize(dimensions);
+    dimensions = static_cast<int>(inv.size()); // without complemented code
+    
+    // 1. resize the dimension of all ACs if necessary
+    std::vector<ArtCategory>::iterator ait = acVector.begin();
+    while(ait != acVector.end()){
+        (*ait).resize(dimensions);
+        ait++;
+    }
+    
+    // 2. normalize inv and copy it to inputVector with complement code
+    inputVector.clear();
+    double max;
+    getMax(inv, max);
+    std::vector<double>::iterator it = inv.begin();
+    while (it != inv.end()) {
+        double normalized = (*it)/max;
+        inputVector.push_back(normalized);
+        inputVector.push_back(1.0-normalized);
         it++;
     }
-
-    for(int i = 0; i < dimensions; i++){
-        inputVector[i*2] = in[i];
-        inputVector[i*2+1] = 1.0 - in[i];
-    }
 }
 
-void FuzzyArt::normalizeInput(){
-
-    double max = 0;
-    //search for max value in the input vector
-    for(int i = 0; i < dimensions; i++){
-        max = (inputVector[i] > max ? inputVector[i] : max);
-    }
-
-    //normalize with max value; make all input less than 1.0
-    if (max > 1){
-        for (int i = 0; i < dimensions; i++){
-            inputVector[i] /= max;
-        }
-    }
-}
-
-void FuzzyArt::complementCode(){
-
-    for (int i = 0; i < dimensions*2; i+=2){
-        inputVector[i+1] = 1.0 - inputVector[i];
-    } 
-    // create complement of input - complement coding
-    // e.g. 0.3 0.7 0.5 0.5 0.25 0.75 etc..
-}
-
+// calculate the distances between each category and input vector and store the result in choices vector
 void FuzzyArt::fillCategoryChoice(){
-    choices.clear();
 
-    choices.resize(acVector.size());
-    choiceSize = acVector.size();
+    choices.clear();
+    choices.resize(acVector.size()); // number of choices is depending on the number of ART Categories
+
     // check against all existing categories, and 1 empty one
-    if(dimensions > 0){
-        for(int i = 0; i < choiceSize; i++){
-            choices[i] = acVector[i].choose(inputVector, choice);
-        }
+    for(int i = 0; i < choices.size(); i++){
+        choices[i] = acVector[i].choose(inputVector, choice);
     }
 }
 
@@ -98,17 +77,20 @@ int FuzzyArt::makeChoice(double vig){
     int maxIndex = -1;
     bool chosen = false; // check mVigilance stuff here...
     while (!chosen){
-        // find largest match value
+
+        // 1. find largest match value in the vector of choices
         double max = 0;    
         maxIndex = getMax(choices, max);
 
+        // 2. if something is found
         if (maxIndex != -1){          
-            //search for the closest category            
+
+            // 2-1 get a pointer to AC instance with the biggest match value (closest category)
             ArtCategory* ac = &acVector[maxIndex];
             
-            // if above vigilence then learn from it
-            if (ac->mVigilance(inputVector, vig) || acVector.size() == 1){     // learn!
+            // 2-2 if above vigilence (i.e. the closest one is not close enough)  or there is only one category, then learn
 
+            if (ac->mVigilance(inputVector, vig) || acVector.size() == 1){     // learn!
                 residual = ac->learn(inputVector, learnRate); //learn
                 while (maxIndex >= acVector.size()-1){  // committed the previous uncommitted category, so add a new blank one.
                     acVector.push_back(ArtCategory(dimensions));

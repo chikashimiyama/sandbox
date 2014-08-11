@@ -7,31 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62271A9C1996098800481ADA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62271A9B1996098800481ADA /* main.cpp */; };
-		62271A9E1996098800481ADA /* FuzzyArt.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 62271A9D1996098800481ADA /* FuzzyArt.1 */; };
+		62271ADC19960FB200481ADA /* FuzzyART.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 62271ADB19960FB200481ADA /* FuzzyART.1 */; };
+		62271AF119960FE700481ADA /* ArtCategory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62271AEB19960FE700481ADA /* ArtCategory.cpp */; };
+		62271AF219960FE700481ADA /* FuzzyArt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62271AED19960FE700481ADA /* FuzzyArt.cpp */; };
+		62271AF319960FE700481ADA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62271AF019960FE700481ADA /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		62271A961996098800481ADA /* CopyFiles */ = {
+		62271AD419960FB200481ADA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				62271A9E1996098800481ADA /* FuzzyArt.1 in CopyFiles */,
+				62271ADC19960FB200481ADA /* FuzzyART.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		62271A981996098800481ADA /* FuzzyArt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FuzzyArt; sourceTree = BUILT_PRODUCTS_DIR; };
-		62271A9B1996098800481ADA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		62271A9D1996098800481ADA /* FuzzyArt.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = FuzzyArt.1; sourceTree = "<group>"; };
+		62271AD619960FB200481ADA /* FuzzyART */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FuzzyART; sourceTree = BUILT_PRODUCTS_DIR; };
+		62271ADB19960FB200481ADA /* FuzzyART.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = FuzzyART.1; sourceTree = "<group>"; };
+		62271AEB19960FE700481ADA /* ArtCategory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArtCategory.cpp; sourceTree = SOURCE_ROOT; };
+		62271AEC19960FE700481ADA /* ArtCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtCategory.h; sourceTree = SOURCE_ROOT; };
+		62271AED19960FE700481ADA /* FuzzyArt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FuzzyArt.cpp; sourceTree = SOURCE_ROOT; };
+		62271AEE19960FE700481ADA /* FuzzyArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuzzyArt.h; sourceTree = SOURCE_ROOT; };
+		62271AEF19960FE700481ADA /* iris.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iris.txt; sourceTree = SOURCE_ROOT; };
+		62271AF019960FE700481ADA /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		62271A951996098800481ADA /* Frameworks */ = {
+		62271AD319960FB200481ADA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,90 +48,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		62271A8F1996098800481ADA = {
+		62271ACD19960FB200481ADA = {
 			isa = PBXGroup;
 			children = (
-				62271A9A1996098800481ADA /* FuzzyArt */,
-				62271A991996098800481ADA /* Products */,
+				62271AD819960FB200481ADA /* FuzzyART */,
+				62271AD719960FB200481ADA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		62271A991996098800481ADA /* Products */ = {
+		62271AD719960FB200481ADA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				62271A981996098800481ADA /* FuzzyArt */,
+				62271AD619960FB200481ADA /* FuzzyART */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		62271A9A1996098800481ADA /* FuzzyArt */ = {
+		62271AD819960FB200481ADA /* FuzzyART */ = {
 			isa = PBXGroup;
 			children = (
-				62271A9B1996098800481ADA /* main.cpp */,
-				62271A9D1996098800481ADA /* FuzzyArt.1 */,
+				62271AEB19960FE700481ADA /* ArtCategory.cpp */,
+				62271AEC19960FE700481ADA /* ArtCategory.h */,
+				62271AED19960FE700481ADA /* FuzzyArt.cpp */,
+				62271AEE19960FE700481ADA /* FuzzyArt.h */,
+				62271AEF19960FE700481ADA /* iris.txt */,
+				62271AF019960FE700481ADA /* main.cpp */,
+				62271ADB19960FB200481ADA /* FuzzyART.1 */,
 			);
-			path = FuzzyArt;
+			path = FuzzyART;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		62271A971996098800481ADA /* FuzzyArt */ = {
+		62271AD519960FB200481ADA /* FuzzyART */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 62271AA11996098800481ADA /* Build configuration list for PBXNativeTarget "FuzzyArt" */;
+			buildConfigurationList = 62271ADF19960FB200481ADA /* Build configuration list for PBXNativeTarget "FuzzyART" */;
 			buildPhases = (
-				62271A941996098800481ADA /* Sources */,
-				62271A951996098800481ADA /* Frameworks */,
-				62271A961996098800481ADA /* CopyFiles */,
+				62271AD219960FB200481ADA /* Sources */,
+				62271AD319960FB200481ADA /* Frameworks */,
+				62271AD419960FB200481ADA /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = FuzzyArt;
-			productName = FuzzyArt;
-			productReference = 62271A981996098800481ADA /* FuzzyArt */;
+			name = FuzzyART;
+			productName = FuzzyART;
+			productReference = 62271AD619960FB200481ADA /* FuzzyART */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		62271A901996098800481ADA /* Project object */ = {
+		62271ACE19960FB200481ADA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = ICST;
 			};
-			buildConfigurationList = 62271A931996098800481ADA /* Build configuration list for PBXProject "FuzzyArt" */;
+			buildConfigurationList = 62271AD119960FB200481ADA /* Build configuration list for PBXProject "FuzzyART" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 62271A8F1996098800481ADA;
-			productRefGroup = 62271A991996098800481ADA /* Products */;
+			mainGroup = 62271ACD19960FB200481ADA;
+			productRefGroup = 62271AD719960FB200481ADA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				62271A971996098800481ADA /* FuzzyArt */,
+				62271AD519960FB200481ADA /* FuzzyART */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		62271A941996098800481ADA /* Sources */ = {
+		62271AD219960FB200481ADA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62271A9C1996098800481ADA /* main.cpp in Sources */,
+				62271AF219960FE700481ADA /* FuzzyArt.cpp in Sources */,
+				62271AF119960FE700481ADA /* ArtCategory.cpp in Sources */,
+				62271AF319960FE700481ADA /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		62271A9F1996098800481ADA /* Debug */ = {
+		62271ADD19960FB200481ADA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -162,7 +176,7 @@
 			};
 			name = Debug;
 		};
-		62271AA01996098800481ADA /* Release */ = {
+		62271ADE19960FB200481ADA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -194,14 +208,14 @@
 			};
 			name = Release;
 		};
-		62271AA21996098800481ADA /* Debug */ = {
+		62271AE019960FB200481ADA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		62271AA31996098800481ADA /* Release */ = {
+		62271AE119960FB200481ADA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -211,24 +225,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		62271A931996098800481ADA /* Build configuration list for PBXProject "FuzzyArt" */ = {
+		62271AD119960FB200481ADA /* Build configuration list for PBXProject "FuzzyART" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				62271A9F1996098800481ADA /* Debug */,
-				62271AA01996098800481ADA /* Release */,
+				62271ADD19960FB200481ADA /* Debug */,
+				62271ADE19960FB200481ADA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		62271AA11996098800481ADA /* Build configuration list for PBXNativeTarget "FuzzyArt" */ = {
+		62271ADF19960FB200481ADA /* Build configuration list for PBXNativeTarget "FuzzyART" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				62271AA21996098800481ADA /* Debug */,
-				62271AA31996098800481ADA /* Release */,
+				62271AE019960FB200481ADA /* Debug */,
+				62271AE119960FB200481ADA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 62271A901996098800481ADA /* Project object */;
+	rootObject = 62271ACE19960FB200481ADA /* Project object */;
 }

@@ -15,12 +15,15 @@ private:
     bool isSameSize(std::vector<double> &v1, std::vector<double> &v2 );
 public:
 
-	// weight vector will be allocated based on the dim size
-	// all weight will be initialized with 1.0
-	ArtCategory(int dim); // OK
+	// weight vector will be allocated based on the dim size (x2)
+	// all weight will be initialized with 1.0, sum will be calculated
+	ArtCategory(int dim); 
 	
+    //
 	double choose(std::vector<double> input, double mChoice);
-	bool mVigilance(const std::vector<double>input, double mVigilance);
+
+	
+    bool mVigilance(const std::vector<double>input, double mVigilance);
 	double getVigilance(const std::vector<double> input);
 
 	// update vector of weighting by the input vector
