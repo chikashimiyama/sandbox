@@ -14,25 +14,89 @@
 #include "Util/GRTCommon.h"
 #include "CoreModules/Clusterer.h"
 #include "DataStructures/ClassificationData.h"
+#include "ArtCategory.h"
+#include <string>
+#include <vector>
 
 namespace GRT {
 
 class FuzzyART : public Clusterer{
     
+protected:
+    // vectors
+    std::vector<ArtCategory> acVector;
+    std::vector<double>inputVector; // input vector
+    std::vector<double>choices; // vector of likelihood aginst each category
+    std::vector<UINT> labels;
+    
+    // parameters
+    UINT dimensions;
+    UINT choice;
+    double learnRate;
+    double vigilance;
+
+    UINT inputCount;
+    UINT recentChoice; // the most recently chosen category
+
+    double residual;    // how much the chosen category changed with the last input/learning step
+    
+private:
+    static RegisterClustererModule< FuzzyART > registerModule;
+    
+
 public:
-    FuzzyART();
+    
+    FuzzyART(const UINT choice=0, const double learnRate=0.5, const double vigilance=0.85);
     ~FuzzyART();
+    
     virtual bool train_(MatrixDouble &data);
-    //Tell the compiler we are using the following functions from the MLBase class to stop hidden virtual function warnings
-    using MLBase::saveModelToFile;
-    using MLBase::loadModelFromFile;
-    using MLBase::train;
-    using MLBase::train_;
-    using MLBase::predict;
-    using MLBase::predict_;
-};
 
+    void setInput(std::vector<double> input);
+    void normalizeInput();
+    void complementCode();
+    void fillCategoryChoice();
+    int makeChoice(double vig);
+    int getMax(std::vector<double> vec, double &max);
+    
+    
+    bool reset();
+    void setLearnRate(double l);
+	void setChoice(double c);
+	void setVigilance(double v);
+    std::vector<double> getCategoryChoices();
+    UINT getNumberOfCategories();
+    UINT getChoosenCategory();
 
+    UINT classify(std::vector<double> inv);
+//  UINT increaseVigilance();
+    void dump();};
+    
+inline void FuzzyART::setLearnRate(double l){
+    learnRate = l;
+}
+
+inline void FuzzyART::setChoice(double c){
+    choice = c;
+}
+
+inline void FuzzyART::setVigilance(double v){
+    vigilance = v;
+}
+
+inline std::vector<double> FuzzyART::getCategoryChoices(){
+    return choices;
+}
+
+inline UINT FuzzyART::getNumberOfCategories(){
+    return acVector.size();
+}
+
+inline UINT FuzzyART::getChoosenCategory(){
+    return recentChoice;
+}
+
+    
+    
 }
 
 

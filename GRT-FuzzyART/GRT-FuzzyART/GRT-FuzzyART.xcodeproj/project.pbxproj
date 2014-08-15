@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		628695D3199A1128008118F0 /* ArtCategory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 628695CF199A1128008118F0 /* ArtCategory.cpp */; };
+		628695D4199A1128008118F0 /* FuzzyART.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 628695D1199A1128008118F0 /* FuzzyART.cpp */; };
 		62E0D0991998B0DA0035203D /* GRT_FuzzyART.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 62E0D0981998B0DA0035203D /* GRT_FuzzyART.1 */; };
 		62E0D0A11998B1120035203D /* libgrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E0D09F1998B1120035203D /* libgrt.a */; };
 		62E0D0A21998B1130035203D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E0D0A01998B1120035203D /* main.cpp */; };
-		62E0D0A51998B3AF0035203D /* FuzzyART.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62E0D0A31998B3AF0035203D /* FuzzyART.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,12 +28,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		628695CF199A1128008118F0 /* ArtCategory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArtCategory.cpp; sourceTree = "<group>"; };
+		628695D0199A1128008118F0 /* ArtCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtCategory.h; sourceTree = "<group>"; };
+		628695D1199A1128008118F0 /* FuzzyART.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FuzzyART.cpp; sourceTree = "<group>"; };
+		628695D2199A1128008118F0 /* FuzzyART.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuzzyART.h; sourceTree = "<group>"; };
 		62E0D0931998B0DA0035203D /* GRT-FuzzyART */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "GRT-FuzzyART"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E0D0981998B0DA0035203D /* GRT_FuzzyART.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = GRT_FuzzyART.1; sourceTree = "<group>"; };
 		62E0D09F1998B1120035203D /* libgrt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgrt.a; sourceTree = "<group>"; };
 		62E0D0A01998B1120035203D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		62E0D0A31998B3AF0035203D /* FuzzyART.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FuzzyART.cpp; sourceTree = "<group>"; };
-		62E0D0A41998B3AF0035203D /* FuzzyART.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuzzyART.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +69,12 @@
 		62E0D0951998B0DA0035203D /* GRT-FuzzyART */ = {
 			isa = PBXGroup;
 			children = (
+				628695CF199A1128008118F0 /* ArtCategory.cpp */,
+				628695D0199A1128008118F0 /* ArtCategory.h */,
+				628695D1199A1128008118F0 /* FuzzyART.cpp */,
+				628695D2199A1128008118F0 /* FuzzyART.h */,
 				62E0D09F1998B1120035203D /* libgrt.a */,
 				62E0D0A01998B1120035203D /* main.cpp */,
-				62E0D0A31998B3AF0035203D /* FuzzyART.cpp */,
-				62E0D0A41998B3AF0035203D /* FuzzyART.h */,
 				62E0D0981998B0DA0035203D /* GRT_FuzzyART.1 */,
 			);
 			path = "GRT-FuzzyART";
@@ -126,8 +131,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62E0D0A51998B3AF0035203D /* FuzzyART.cpp in Sources */,
+				628695D4199A1128008118F0 /* FuzzyART.cpp in Sources */,
 				62E0D0A21998B1130035203D /* main.cpp in Sources */,
+				628695D3199A1128008118F0 /* ArtCategory.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +144,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -168,7 +175,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
@@ -176,8 +183,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -200,13 +208,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};
 		62E0D09D1998B0DA0035203D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GRT-FuzzyART",
@@ -219,6 +228,7 @@
 		62E0D09E1998B0DA0035203D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GRT-FuzzyART",
@@ -247,6 +257,7 @@
 				62E0D09E1998B0DA0035203D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

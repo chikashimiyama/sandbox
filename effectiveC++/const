@@ -1,0 +1,9 @@
+#include <iostream>
+
+int main(){
+	// normal
+	char greeting[] = "hello";
+	greeting[0] = 'H';
+
+	return 0;
+}

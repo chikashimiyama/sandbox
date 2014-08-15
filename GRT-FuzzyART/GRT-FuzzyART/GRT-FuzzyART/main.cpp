@@ -8,11 +8,17 @@
 
 #include <iostream>
 #include "GRT.h"
-#include "FuzzyArt.h"
+#include "FuzzyART.h"
+
+
+using namespace std;
 
 int main(){
     
+
     GRT::FuzzyART fa;
+    
+    cout << "Fuzzy ART GRT Test" << endl;
     
     return 0;
 }
