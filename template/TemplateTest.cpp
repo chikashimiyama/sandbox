@@ -13,6 +13,23 @@ T multi(T a, T b){
 	return a * b;
 }
 
+
+class sdInterpolation{
+
+public:
+    template <typename T>
+    T interpolate(T valueA, T valueB, double weight);
+
+};
+
+template <typename T>
+T sdInterpolation::interpolate(T valueA, T valueB, double weight){
+    return (valueB - valueA)  * weight + valueA;
+}
+
+
+
+
 int main(){
 	float x = multi(2.3 , 3.1);
 	int  y = multi(2.3, 3.1);
@@ -26,4 +43,8 @@ int main(){
 	ex.setData(20.3);
 	cout << ex.getData() << endl;
 
+	sdInterpolation intp;
+	cout <<  "intp: " << intp.interpolate(300, 900, 0.3) << endl;
+
+	return 0;
 }

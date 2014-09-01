@@ -1,0 +1,23 @@
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
+int main(void){
+  vector<vector<char> > vecvec;
+  vector<char> vec1;
+  vector<char> vec2;
+
+  vec1.push_back('a');
+  vec1.push_back('b');
+  vec1.push_back('c');
+
+  vec2.push_back('A');
+  vec2.push_back('B');
+
+  vecvec.push_back(vec1);
+  vecvec.push_back(vec2);
+
+  cout << vecvec[1][2]; // B
+  return 0;
+}

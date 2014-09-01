@@ -1,0 +1,7 @@
+#include "mymath.h"
+#include <stdio.h>
+
+int main(void){
+  printf("result:%f", pythagorean(3,4));
+  return 0;
+}

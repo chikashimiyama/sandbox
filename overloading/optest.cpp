@@ -3,18 +3,28 @@
 using namespace std;
 
 class OpTest{
-	public:
-	OpTest():someString("This is test"){};
 	string someString;
 
-	char operator[](int x){
+	public:
+	OpTest():someString("This is test"){};
+
+	char &operator[](int const x) {
 		return someString[x];
 	}
+
+	operator std::string(){
+		return someString;
+	}
+
 };
 
 int main(int argc, char const *argv[])
 {
 	OpTest ot;
-	cout << ot[3] << endl;
+	std::string str;
+	cout << ot[0] << endl;
+	ot[0] = 't';
+	str = ot;
+	cout << str << endl;
 	return 0;
 }
