@@ -3,6 +3,7 @@
 class Test{
 public:
 	int a;
+	const int &getA() const{return a;} ;
 };
 
 using namespace std;
@@ -19,6 +20,13 @@ int main(void){
 	Test test;
 	test.a = 25;
 
+	cout << test.getA() << endl;
+	int &x = test.getA();
+	x = 30;
+
+	cout << test.getA() << endl;
+
+
 	changeTest(test); // normal. will be copied
 	cout << test.a	 << endl;
 
@@ -33,6 +41,7 @@ int main(void){
 
 	changeTestWithConstPtr(&test); 
 	cout << test.a	 << endl;
+
 
 	return 0;
 }

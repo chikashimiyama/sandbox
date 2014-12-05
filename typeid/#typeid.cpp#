@@ -1,0 +1,8 @@
+#include<iostream>
+#include<typeinfo>
+
+int main(void){
+  unsigned int x;
+  cout << "typeid:" << std::typeid(x).name() << "\n";
+  return 0;
+}

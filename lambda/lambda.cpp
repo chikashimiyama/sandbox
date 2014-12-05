@@ -2,6 +2,6 @@
 using namespace std;
 int main(int argc, char const *argv[])
 {
-    [](string const &str){ std::cout<<str<<std::endl;}("fff");
+    auto test = [](string const &str){ std::cout << str << std::endl; };
     return 0;
 }

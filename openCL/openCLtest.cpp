@@ -182,10 +182,6 @@ int main(void){
     queue.enqueueReadBuffer(outputSinCL, CL_TRUE, 0, sizeof(int) * 100000, sinResult, NULL, &event);  
     event.wait();
 
-    for(int i = 0; i < 100000; i++){
-        cout << sinResult[i] << endl;
-    }
-
     cl_int x = 0;
     queue.enqueueNDRangeKernel(kernelSum, NullRange, NDRange(16), NullRange, NULL, &event);
     queue.enqueueReadBuffer(outputBufferCL, CL_TRUE, 0, sizeof(int), result, NULL, &event);  

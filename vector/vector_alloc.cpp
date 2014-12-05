@@ -3,12 +3,10 @@
 
 using namespace std;
 int main(void){
-	vector<int> test(29);
-	cout << test.size();
+	vector<int> test;
+	test[20] = 30;
 
-	test.resize(5);
-	cout << test.size();
-
+	//	cout << test[20] << endl;
 	return 0;
 
 }
