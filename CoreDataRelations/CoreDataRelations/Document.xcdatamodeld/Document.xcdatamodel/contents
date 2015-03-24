@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Department" syncable="YES">
+        <attribute name="deptName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="department" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Student" syncable="YES">
+        <attribute name="familyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="givenName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="department" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Department" inverseName="students" inverseEntity="Department" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Student" positionX="-290" positionY="2" width="128" height="88"/>
+        <element name="Department" positionX="-29" positionY="9" width="128" height="73"/>
+    </elements>
+</model>

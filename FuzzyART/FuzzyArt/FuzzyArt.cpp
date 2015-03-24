@@ -79,7 +79,7 @@ int FuzzyArt::makeChoice(double vig){
     while (!chosen){
 
         // 1. find largest match value in the vector of choices
-        double max = 0;    
+        double max = 0;
         maxIndex = getMax(choices, max);
 
         // 2. if something is found
@@ -90,7 +90,7 @@ int FuzzyArt::makeChoice(double vig){
             
             // 2-2 if above vigilence (i.e. the closest one is not close enough)  or there is only one category, then learn
 
-            if (ac->mVigilance(inputVector, vig) || acVector.size() == 1){     // learn!
+            if (ac->getVigilance(<#const std::vector<double> input#>)(inputVector, vig) || acVector.size() == 1){     // learn!
                 residual = ac->learn(inputVector, learnRate); //learn
                 while (maxIndex >= acVector.size()-1){  // committed the previous uncommitted category, so add a new blank one.
                     acVector.push_back(ArtCategory(dimensions));

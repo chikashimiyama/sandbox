@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		62F983AB1A71324F00B4FDA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F983AA1A71324F00B4FDA1 /* AppDelegate.m */; };
+		62F983AD1A71324F00B4FDA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F983AC1A71324F00B4FDA1 /* main.m */; };
+		62F983AF1A71324F00B4FDA1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62F983AE1A71324F00B4FDA1 /* Images.xcassets */; };
+		62F983B21A71324F00B4FDA1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62F983B01A71324F00B4FDA1 /* MainMenu.xib */; };
+		62F983BE1A71324F00B4FDA1 /* BreakPointEditorDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F983BD1A71324F00B4FDA1 /* BreakPointEditorDemoTests.m */; };
+		62F983C91A7132F400B4FDA1 /* NSBreakPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F983C81A7132F400B4FDA1 /* NSBreakPointView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		62F983B81A71324F00B4FDA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62F9839C1A71324F00B4FDA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 62F983A31A71324F00B4FDA1;
+			remoteInfo = BreakPointEditorDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		62F983A41A71324F00B4FDA1 /* BreakPointEditorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakPointEditorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		62F983A81A71324F00B4FDA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62F983A91A71324F00B4FDA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		62F983AA1A71324F00B4FDA1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		62F983AC1A71324F00B4FDA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		62F983AE1A71324F00B4FDA1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		62F983B11A71324F00B4FDA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		62F983B71A71324F00B4FDA1 /* BreakPointEditorDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakPointEditorDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62F983BC1A71324F00B4FDA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62F983BD1A71324F00B4FDA1 /* BreakPointEditorDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BreakPointEditorDemoTests.m; sourceTree = "<group>"; };
+		62F983C71A7132F400B4FDA1 /* NSBreakPointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBreakPointView.h; sourceTree = "<group>"; };
+		62F983C81A7132F400B4FDA1 /* NSBreakPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBreakPointView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		62F983A11A71324F00B4FDA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62F983B41A71324F00B4FDA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		62F9839B1A71324F00B4FDA1 = {
+			isa = PBXGroup;
+			children = (
+				62F983A61A71324F00B4FDA1 /* BreakPointEditorDemo */,
+				62F983BA1A71324F00B4FDA1 /* BreakPointEditorDemoTests */,
+				62F983A51A71324F00B4FDA1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		62F983A51A71324F00B4FDA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62F983A41A71324F00B4FDA1 /* BreakPointEditorDemo.app */,
+				62F983B71A71324F00B4FDA1 /* BreakPointEditorDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		62F983A61A71324F00B4FDA1 /* BreakPointEditorDemo */ = {
+			isa = PBXGroup;
+			children = (
+				62F983A91A71324F00B4FDA1 /* AppDelegate.h */,
+				62F983AA1A71324F00B4FDA1 /* AppDelegate.m */,
+				62F983AE1A71324F00B4FDA1 /* Images.xcassets */,
+				62F983B01A71324F00B4FDA1 /* MainMenu.xib */,
+				62F983C71A7132F400B4FDA1 /* NSBreakPointView.h */,
+				62F983C81A7132F400B4FDA1 /* NSBreakPointView.m */,
+				62F983A71A71324F00B4FDA1 /* Supporting Files */,
+			);
+			path = BreakPointEditorDemo;
+			sourceTree = "<group>";
+		};
+		62F983A71A71324F00B4FDA1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				62F983A81A71324F00B4FDA1 /* Info.plist */,
+				62F983AC1A71324F00B4FDA1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		62F983BA1A71324F00B4FDA1 /* BreakPointEditorDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				62F983BD1A71324F00B4FDA1 /* BreakPointEditorDemoTests.m */,
+				62F983BB1A71324F00B4FDA1 /* Supporting Files */,
+			);
+			path = BreakPointEditorDemoTests;
+			sourceTree = "<group>";
+		};
+		62F983BB1A71324F00B4FDA1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				62F983BC1A71324F00B4FDA1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		62F983A31A71324F00B4FDA1 /* BreakPointEditorDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62F983C11A71324F00B4FDA1 /* Build configuration list for PBXNativeTarget "BreakPointEditorDemo" */;
+			buildPhases = (
+				62F983A01A71324F00B4FDA1 /* Sources */,
+				62F983A11A71324F00B4FDA1 /* Frameworks */,
+				62F983A21A71324F00B4FDA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BreakPointEditorDemo;
+			productName = BreakPointEditorDemo;
+			productReference = 62F983A41A71324F00B4FDA1 /* BreakPointEditorDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		62F983B61A71324F00B4FDA1 /* BreakPointEditorDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62F983C41A71324F00B4FDA1 /* Build configuration list for PBXNativeTarget "BreakPointEditorDemoTests" */;
+			buildPhases = (
+				62F983B31A71324F00B4FDA1 /* Sources */,
+				62F983B41A71324F00B4FDA1 /* Frameworks */,
+				62F983B51A71324F00B4FDA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62F983B91A71324F00B4FDA1 /* PBXTargetDependency */,
+			);
+			name = BreakPointEditorDemoTests;
+			productName = BreakPointEditorDemoTests;
+			productReference = 62F983B71A71324F00B4FDA1 /* BreakPointEditorDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		62F9839C1A71324F00B4FDA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Chikashi Miyama";
+				TargetAttributes = {
+					62F983A31A71324F00B4FDA1 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					62F983B61A71324F00B4FDA1 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 62F983A31A71324F00B4FDA1;
+					};
+				};
+			};
+			buildConfigurationList = 62F9839F1A71324F00B4FDA1 /* Build configuration list for PBXProject "BreakPointEditorDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 62F9839B1A71324F00B4FDA1;
+			productRefGroup = 62F983A51A71324F00B4FDA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				62F983A31A71324F00B4FDA1 /* BreakPointEditorDemo */,
+				62F983B61A71324F00B4FDA1 /* BreakPointEditorDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		62F983A21A71324F00B4FDA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62F983AF1A71324F00B4FDA1 /* Images.xcassets in Resources */,
+				62F983B21A71324F00B4FDA1 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62F983B51A71324F00B4FDA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		62F983A01A71324F00B4FDA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62F983AD1A71324F00B4FDA1 /* main.m in Sources */,
+				62F983C91A7132F400B4FDA1 /* NSBreakPointView.m in Sources */,
+				62F983AB1A71324F00B4FDA1 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62F983B31A71324F00B4FDA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62F983BE1A71324F00B4FDA1 /* BreakPointEditorDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		62F983B91A71324F00B4FDA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 62F983A31A71324F00B4FDA1 /* BreakPointEditorDemo */;
+			targetProxy = 62F983B81A71324F00B4FDA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		62F983B01A71324F00B4FDA1 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62F983B11A71324F00B4FDA1 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		62F983BF1A71324F00B4FDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		62F983C01A71324F00B4FDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		62F983C21A71324F00B4FDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BreakPointEditorDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		62F983C31A71324F00B4FDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BreakPointEditorDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		62F983C51A71324F00B4FDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BreakPointEditorDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreakPointEditorDemo.app/Contents/MacOS/BreakPointEditorDemo";
+			};
+			name = Debug;
+		};
+		62F983C61A71324F00B4FDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BreakPointEditorDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BreakPointEditorDemo.app/Contents/MacOS/BreakPointEditorDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		62F9839F1A71324F00B4FDA1 /* Build configuration list for PBXProject "BreakPointEditorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62F983BF1A71324F00B4FDA1 /* Debug */,
+				62F983C01A71324F00B4FDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62F983C11A71324F00B4FDA1 /* Build configuration list for PBXNativeTarget "BreakPointEditorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62F983C21A71324F00B4FDA1 /* Debug */,
+				62F983C31A71324F00B4FDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		62F983C41A71324F00B4FDA1 /* Build configuration list for PBXNativeTarget "BreakPointEditorDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62F983C51A71324F00B4FDA1 /* Debug */,
+				62F983C61A71324F00B4FDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 62F9839C1A71324F00B4FDA1 /* Project object */;
+}

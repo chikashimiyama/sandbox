@@ -221,6 +221,7 @@
 					"$(PROJECT_DIR)/GRT-FuzzyART",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				USER_HEADER_SEARCH_PATHS = /Users/chikashi/Development/grt/GRT;
 			};
 			name = Debug;
@@ -234,6 +235,7 @@
 					"$(PROJECT_DIR)/GRT-FuzzyART",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				USER_HEADER_SEARCH_PATHS = /Users/chikashi/Development/grt/GRT;
 			};
 			name = Release;

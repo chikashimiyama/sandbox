@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		629489EF1AB990150070A08B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629489EE1AB990150070A08B /* Carbon.framework */; };
+		629489F21AB9901D0070A08B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629489F01AB9901D0070A08B /* CoreAudio.framework */; };
+		629489F31AB9901D0070A08B /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629489F11AB9901D0070A08B /* CoreAudioKit.framework */; };
+		629489F51AB996380070A08B /* libportaudio.la in Resources */ = {isa = PBXBuildFile; fileRef = 629489F41AB996380070A08B /* libportaudio.la */; };
+		629489F71AB997470070A08B /* libportaudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 629489F61AB997470070A08B /* libportaudio.a */; };
+		62B2128D1AB62F890010697C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2128C1AB62F890010697C /* AppDelegate.m */; };
+		62B2128F1AB62F890010697C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2128E1AB62F890010697C /* main.m */; };
+		62B212911AB62F890010697C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62B212901AB62F890010697C /* Images.xcassets */; };
+		62B212941AB62F890010697C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62B212921AB62F890010697C /* MainMenu.xib */; };
+		62B212A01AB62F890010697C /* LibPDTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2129F1AB62F890010697C /* LibPDTestTests.m */; };
+		62B212DD1AB636710010697C /* libpd-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B212DC1AB636710010697C /* libpd-osx.a */; };
+		62B212DF1AB6367B0010697C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B212DE1AB6367B0010697C /* Cocoa.framework */; };
+		62B394C71AB648C400D68DD1 /* PdBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B394C61AB648C400D68DD1 /* PdBase.m */; };
+		62B394C91AB648C800D68DD1 /* PdDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B394C81AB648C800D68DD1 /* PdDispatcher.m */; };
+		62B394CB1AB648CC00D68DD1 /* PdFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B394CA1AB648CC00D68DD1 /* PdFile.m */; };
+		62B394CD1AB64A8800D68DD1 /* AudioHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B394CC1AB64A8800D68DD1 /* AudioHelpers.m */; };
+		62B6B7CA1AC16D2E006D99D2 /* WaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B6B7C91AC16D2E006D99D2 /* WaveformView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		62B2129A1AB62F890010697C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62B2127E1AB62F890010697C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 62B212851AB62F890010697C;
+			remoteInfo = LibPDTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		629489EE1AB990150070A08B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		629489F01AB9901D0070A08B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		629489F11AB9901D0070A08B /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		629489F41AB996380070A08B /* libportaudio.la */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = libportaudio.la; path = LibPDTest/portaudio/lib/libportaudio.la; sourceTree = "<group>"; };
+		629489F61AB997470070A08B /* libportaudio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libportaudio.a; path = LibPDTest/libportaudio.a; sourceTree = "<group>"; };
+		62B212861AB62F890010697C /* LibPDTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibPDTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		62B2128A1AB62F890010697C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62B2128B1AB62F890010697C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		62B2128C1AB62F890010697C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		62B2128E1AB62F890010697C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		62B212901AB62F890010697C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		62B212931AB62F890010697C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		62B212991AB62F890010697C /* LibPDTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LibPDTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62B2129E1AB62F890010697C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62B2129F1AB62F890010697C /* LibPDTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibPDTestTests.m; sourceTree = "<group>"; };
+		62B212D41AB62FA60010697C /* libpd 2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "libpd 2.xcodeproj"; path = "../libpd/libpd 2.xcodeproj"; sourceTree = "<group>"; };
+		62B212DA1AB6365B0010697C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		62B212DC1AB636710010697C /* libpd-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpd-osx.a"; path = "../../../Library/Developer/Xcode/DerivedData/LibPDTest-agptefzsbndlffbxyjthxhnxngtl/Build/Products/Debug/libpd-osx.a"; sourceTree = "<group>"; };
+		62B212DE1AB6367B0010697C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		62B394C61AB648C400D68DD1 /* PdBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PdBase.m; path = ../libpd/objc/PdBase.m; sourceTree = "<group>"; };
+		62B394C81AB648C800D68DD1 /* PdDispatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PdDispatcher.m; path = ../libpd/objc/PdDispatcher.m; sourceTree = "<group>"; };
+		62B394CA1AB648CC00D68DD1 /* PdFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PdFile.m; path = ../libpd/objc/PdFile.m; sourceTree = "<group>"; };
+		62B394CC1AB64A8800D68DD1 /* AudioHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioHelpers.m; path = ../libpd/objc/AudioHelpers.m; sourceTree = "<group>"; };
+		62B6B7C81AC16D2E006D99D2 /* WaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveformView.h; sourceTree = "<group>"; };
+		62B6B7C91AC16D2E006D99D2 /* WaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaveformView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		62B212831AB62F890010697C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				629489F21AB9901D0070A08B /* CoreAudio.framework in Frameworks */,
+				629489F31AB9901D0070A08B /* CoreAudioKit.framework in Frameworks */,
+				629489EF1AB990150070A08B /* Carbon.framework in Frameworks */,
+				629489F71AB997470070A08B /* libportaudio.a in Frameworks */,
+				62B212DD1AB636710010697C /* libpd-osx.a in Frameworks */,
+				62B212DF1AB6367B0010697C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62B212961AB62F890010697C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6238298A1AB88E4D005C15FF /* PdWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				62B394CA1AB648CC00D68DD1 /* PdFile.m */,
+				62B394C81AB648C800D68DD1 /* PdDispatcher.m */,
+				62B394C61AB648C400D68DD1 /* PdBase.m */,
+				62B394CC1AB64A8800D68DD1 /* AudioHelpers.m */,
+			);
+			name = PdWrapper;
+			sourceTree = "<group>";
+		};
+		629489ED1AB989ED0070A08B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				629489F01AB9901D0070A08B /* CoreAudio.framework */,
+				629489F11AB9901D0070A08B /* CoreAudioKit.framework */,
+				629489EE1AB990150070A08B /* Carbon.framework */,
+				62B212DC1AB636710010697C /* libpd-osx.a */,
+				629489F61AB997470070A08B /* libportaudio.a */,
+				629489F41AB996380070A08B /* libportaudio.la */,
+				62B212DE1AB6367B0010697C /* Cocoa.framework */,
+				62B212DA1AB6365B0010697C /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62B2127D1AB62F890010697C = {
+			isa = PBXGroup;
+			children = (
+				6238298A1AB88E4D005C15FF /* PdWrapper */,
+				629489ED1AB989ED0070A08B /* Frameworks */,
+				62B212D41AB62FA60010697C /* libpd 2.xcodeproj */,
+				62B212881AB62F890010697C /* LibPDTest */,
+				62B2129C1AB62F890010697C /* LibPDTestTests */,
+				62B212871AB62F890010697C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		62B212871AB62F890010697C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62B212861AB62F890010697C /* LibPDTest.app */,
+				62B212991AB62F890010697C /* LibPDTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		62B212881AB62F890010697C /* LibPDTest */ = {
+			isa = PBXGroup;
+			children = (
+				62B2128B1AB62F890010697C /* AppDelegate.h */,
+				62B2128C1AB62F890010697C /* AppDelegate.m */,
+				62B6B7C81AC16D2E006D99D2 /* WaveformView.h */,
+				62B6B7C91AC16D2E006D99D2 /* WaveformView.m */,
+				62B212901AB62F890010697C /* Images.xcassets */,
+				62B212921AB62F890010697C /* MainMenu.xib */,
+				62B212891AB62F890010697C /* Supporting Files */,
+			);
+			path = LibPDTest;
+			sourceTree = "<group>";
+		};
+		62B212891AB62F890010697C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				62B2128A1AB62F890010697C /* Info.plist */,
+				62B2128E1AB62F890010697C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		62B2129C1AB62F890010697C /* LibPDTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				62B2129F1AB62F890010697C /* LibPDTestTests.m */,
+				62B2129D1AB62F890010697C /* Supporting Files */,
+			);
+			path = LibPDTestTests;
+			sourceTree = "<group>";
+		};
+		62B2129D1AB62F890010697C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				62B2129E1AB62F890010697C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		62B212D51AB62FA60010697C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		62B212851AB62F890010697C /* LibPDTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62B212A31AB62F890010697C /* Build configuration list for PBXNativeTarget "LibPDTest" */;
+			buildPhases = (
+				62B212821AB62F890010697C /* Sources */,
+				62B212831AB62F890010697C /* Frameworks */,
+				62B212841AB62F890010697C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LibPDTest;
+			productName = LibPDTest;
+			productReference = 62B212861AB62F890010697C /* LibPDTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		62B212981AB62F890010697C /* LibPDTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62B212A61AB62F890010697C /* Build configuration list for PBXNativeTarget "LibPDTestTests" */;
+			buildPhases = (
+				62B212951AB62F890010697C /* Sources */,
+				62B212961AB62F890010697C /* Frameworks */,
+				62B212971AB62F890010697C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62B2129B1AB62F890010697C /* PBXTargetDependency */,
+			);
+			name = LibPDTestTests;
+			productName = LibPDTestTests;
+			productReference = 62B212991AB62F890010697C /* LibPDTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		62B2127E1AB62F890010697C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Chikashi Miyama";
+				TargetAttributes = {
+					62B212851AB62F890010697C = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					62B212981AB62F890010697C = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 62B212851AB62F890010697C;
+					};
+				};
+			};
+			buildConfigurationList = 62B212811AB62F890010697C /* Build configuration list for PBXProject "LibPDTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 62B2127D1AB62F890010697C;
+			productRefGroup = 62B212871AB62F890010697C /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 62B212D51AB62FA60010697C /* Products */;
+					ProjectRef = 62B212D41AB62FA60010697C /* libpd 2.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				62B212851AB62F890010697C /* LibPDTest */,
+				62B212981AB62F890010697C /* LibPDTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		62B212841AB62F890010697C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62B212911AB62F890010697C /* Images.xcassets in Resources */,
+				629489F51AB996380070A08B /* libportaudio.la in Resources */,
+				62B212941AB62F890010697C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62B212971AB62F890010697C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		62B212821AB62F890010697C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62B2128F1AB62F890010697C /* main.m in Sources */,
+				62B394CD1AB64A8800D68DD1 /* AudioHelpers.m in Sources */,
+				62B2128D1AB62F890010697C /* AppDelegate.m in Sources */,
+				62B394C71AB648C400D68DD1 /* PdBase.m in Sources */,
+				62B6B7CA1AC16D2E006D99D2 /* WaveformView.m in Sources */,
+				62B394C91AB648C800D68DD1 /* PdDispatcher.m in Sources */,
+				62B394CB1AB648CC00D68DD1 /* PdFile.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62B212951AB62F890010697C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62B212A01AB62F890010697C /* LibPDTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		62B2129B1AB62F890010697C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 62B212851AB62F890010697C /* LibPDTest */;
+			targetProxy = 62B2129A1AB62F890010697C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		62B212921AB62F890010697C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62B212931AB62F890010697C /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		62B212A11AB62F890010697C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.10;
+				USER_HEADER_SEARCH_PATHS = "/Users/chikashi/Development/sandbox/libpd/objc /Users/chikashi/Development/sandbox/libpd/libpd_wrapper/** /Users/chikashi/Development/sandbox/libpd/pure-data/src \"$(SRCROOT)/LibPDTest/portaudio/include\"";
+			};
+			name = Debug;
+		};
+		62B212A21AB62F890010697C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx10.10;
+				USER_HEADER_SEARCH_PATHS = "/Users/chikashi/Development/sandbox/libpd/objc /Users/chikashi/Development/sandbox/libpd/libpd_wrapper/** /Users/chikashi/Development/sandbox/libpd/pure-data/src \"$(SRCROOT)/LibPDTest/portaudio/include\"";
+			};
+			name = Release;
+		};
+		62B212A41AB62F890010697C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LibPDTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/LibPDTest-agptefzsbndlffbxyjthxhnxngtl/Build/Products/Debug",
+					"$(PROJECT_DIR)/LibPDTest",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		62B212A51AB62F890010697C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LibPDTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/LibPDTest-agptefzsbndlffbxyjthxhnxngtl/Build/Products/Debug",
+					"$(PROJECT_DIR)/LibPDTest",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		62B212A71AB62F890010697C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LibPDTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LibPDTest.app/Contents/MacOS/LibPDTest";
+			};
+			name = Debug;
+		};
+		62B212A81AB62F890010697C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LibPDTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LibPDTest.app/Contents/MacOS/LibPDTest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		62B212811AB62F890010697C /* Build configuration list for PBXProject "LibPDTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62B212A11AB62F890010697C /* Debug */,
+				62B212A21AB62F890010697C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62B212A31AB62F890010697C /* Build configuration list for PBXNativeTarget "LibPDTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62B212A41AB62F890010697C /* Debug */,
+				62B212A51AB62F890010697C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62B212A61AB62F890010697C /* Build configuration list for PBXNativeTarget "LibPDTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62B212A71AB62F890010697C /* Debug */,
+				62B212A81AB62F890010697C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 62B2127E1AB62F890010697C /* Project object */;
+}

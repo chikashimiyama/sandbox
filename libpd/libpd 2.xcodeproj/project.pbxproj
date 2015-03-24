@@ -1,0 +1,235 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		62B212CD1AB62FA60010697C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62B212BD1AB62FA60010697C /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "libpd-ios";
+		};
+		62B212CF1AB62FA60010697C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62B212BD1AB62FA60010697C /* libpd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 119013AB1486450C00086F19;
+			remoteInfo = "libpd-osx";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		62B212AF1AB62FA60010697C /* .classpath */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = .classpath; sourceTree = "<group>"; };
+		62B212B01AB62FA60010697C /* .git */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .git; sourceTree = "<group>"; };
+		62B212B11AB62FA60010697C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		62B212B21AB62FA60010697C /* .gitmodules */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
+		62B212B31AB62FA60010697C /* .project */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = .project; sourceTree = "<group>"; };
+		62B212B41AB62FA60010697C /* Android.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = Android.mk; sourceTree = "<group>"; };
+		62B212B51AB62FA60010697C /* CHANGES.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CHANGES.txt; sourceTree = "<group>"; };
+		62B212B61AB62FA60010697C /* cpp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cpp; sourceTree = "<group>"; };
+		62B212B71AB62FA60010697C /* csharp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = csharp; sourceTree = "<group>"; };
+		62B212B81AB62FA60010697C /* csharptests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = csharptests; sourceTree = "<group>"; };
+		62B212B91AB62FA60010697C /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		62B212BA1AB62FA60010697C /* java */ = {isa = PBXFileReference; lastKnownFileType = folder; path = java; sourceTree = "<group>"; };
+		62B212BB1AB62FA60010697C /* javatests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = javatests; sourceTree = "<group>"; };
+		62B212BC1AB62FA60010697C /* jni */ = {isa = PBXFileReference; lastKnownFileType = folder; path = jni; sourceTree = "<group>"; };
+		62B212BD1AB62FA60010697C /* libpd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = libpd.xcodeproj; sourceTree = "<group>"; };
+		62B212C01AB62FA60010697C /* libpd_win.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = libpd_win.sln; sourceTree = "<group>"; };
+		62B212C11AB62FA60010697C /* libpd_wrapper */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libpd_wrapper; sourceTree = "<group>"; };
+		62B212C21AB62FA60010697C /* libs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libs; sourceTree = "<group>"; };
+		62B212C31AB62FA60010697C /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		62B212C41AB62FA60010697C /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		62B212C51AB62FA60010697C /* mingw_build.bat */ = {isa = PBXFileReference; lastKnownFileType = text; path = mingw_build.bat; sourceTree = "<group>"; };
+		62B212C61AB62FA60010697C /* objc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = objc; sourceTree = "<group>"; };
+		62B212C71AB62FA60010697C /* pure-data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "pure-data"; sourceTree = "<group>"; };
+		62B212C81AB62FA60010697C /* python */ = {isa = PBXFileReference; lastKnownFileType = folder; path = python; sourceTree = "<group>"; };
+		62B212C91AB62FA60010697C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		62B212CA1AB62FA60010697C /* samples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = samples; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		62B212A91AB62FA60010697C = {
+			isa = PBXGroup;
+			children = (
+				62B212AF1AB62FA60010697C /* .classpath */,
+				62B212B01AB62FA60010697C /* .git */,
+				62B212B11AB62FA60010697C /* .gitignore */,
+				62B212B21AB62FA60010697C /* .gitmodules */,
+				62B212B31AB62FA60010697C /* .project */,
+				62B212B41AB62FA60010697C /* Android.mk */,
+				62B212B51AB62FA60010697C /* CHANGES.txt */,
+				62B212B61AB62FA60010697C /* cpp */,
+				62B212B71AB62FA60010697C /* csharp */,
+				62B212B81AB62FA60010697C /* csharptests */,
+				62B212B91AB62FA60010697C /* dist */,
+				62B212BA1AB62FA60010697C /* java */,
+				62B212BB1AB62FA60010697C /* javatests */,
+				62B212BC1AB62FA60010697C /* jni */,
+				62B212BD1AB62FA60010697C /* libpd.xcodeproj */,
+				62B212C01AB62FA60010697C /* libpd_win.sln */,
+				62B212C11AB62FA60010697C /* libpd_wrapper */,
+				62B212C21AB62FA60010697C /* libs */,
+				62B212C31AB62FA60010697C /* LICENSE.txt */,
+				62B212C41AB62FA60010697C /* Makefile */,
+				62B212C51AB62FA60010697C /* mingw_build.bat */,
+				62B212C61AB62FA60010697C /* objc */,
+				62B212C71AB62FA60010697C /* pure-data */,
+				62B212C81AB62FA60010697C /* python */,
+				62B212C91AB62FA60010697C /* README.md */,
+				62B212CA1AB62FA60010697C /* samples */,
+			);
+			sourceTree = "<group>";
+		};
+		62B212BE1AB62FA60010697C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62B212CE1AB62FA60010697C /* libpd-ios.a */,
+				62B212D01AB62FA60010697C /* libpd-osx.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		62B212AE1AB62FA60010697C /* libpd */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 62B212D11AB62FA60010697C /* Build configuration list for PBXLegacyTarget "libpd" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/chikashi/Development/sandbox/libpd;
+			dependencies = (
+			);
+			name = libpd;
+			passBuildSettingsInEnvironment = 1;
+			productName = libpd;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		62B212AA1AB62FA60010697C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 62B212AD1AB62FA60010697C /* Build configuration list for PBXProject "libpd 2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 62B212A91AB62FA60010697C;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 62B212BE1AB62FA60010697C /* Products */;
+					ProjectRef = 62B212BD1AB62FA60010697C /* libpd.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				62B212AE1AB62FA60010697C /* libpd */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		62B212CE1AB62FA60010697C /* libpd-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-ios.a";
+			remoteRef = 62B212CD1AB62FA60010697C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		62B212D01AB62FA60010697C /* libpd-osx.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libpd-osx.a";
+			remoteRef = 62B212CF1AB62FA60010697C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin XCBuildConfiguration section */
+		62B212AB1AB62FA60010697C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		62B212AC1AB62FA60010697C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		62B212D21AB62FA60010697C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = libpd;
+			};
+			name = Debug;
+		};
+		62B212D31AB62FA60010697C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = libpd;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		62B212AD1AB62FA60010697C /* Build configuration list for PBXProject "libpd 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62B212AB1AB62FA60010697C /* Debug */,
+				62B212AC1AB62FA60010697C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62B212D11AB62FA60010697C /* Build configuration list for PBXLegacyTarget "libpd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62B212D21AB62FA60010697C /* Debug */,
+				62B212D31AB62FA60010697C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 62B212AA1AB62FA60010697C /* Project object */;
+}

@@ -10,31 +10,31 @@
 	<string>FuzzyART</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>DA6E5DBE-C8FC-4B51-9711-CD2EEC821A4E</key>
+		<key>DA23A2C2065E94F376A8BD433DF7E0E0AA94D7E9</key>
 		<string>https://github.com/chikashimiyama/sandbox.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FuzzyART/FuzzyART/FuzzyART.xcodeproj/project.xcworkspace</string>
+	<string>FuzzyART/FuzzyART/FuzzyART.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DA6E5DBE-C8FC-4B51-9711-CD2EEC821A4E</key>
+		<key>DA23A2C2065E94F376A8BD433DF7E0E0AA94D7E9</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/chikashimiyama/sandbox.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DA6E5DBE-C8FC-4B51-9711-CD2EEC821A4E</string>
+	<string>DA23A2C2065E94F376A8BD433DF7E0E0AA94D7E9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DA6E5DBE-C8FC-4B51-9711-CD2EEC821A4E</string>
+			<string>DA23A2C2065E94F376A8BD433DF7E0E0AA94D7E9</string>
 			<key>IDESourceControlWCCName</key>
-			<string>FuzzyArt</string>
+			<string>sandbox</string>
 		</dict>
 	</array>
 </dict>
