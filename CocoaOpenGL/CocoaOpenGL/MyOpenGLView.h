@@ -27,6 +27,7 @@ typedef NS_ENUM(NSInteger, EDrawingMode){
     IBOutlet NSTextField * elapsedTimeField;
     float phase;
     NSTimer * timer;
+    NSTrackingArea * trackingArea;
 }
 
 -(IBAction)redraw:(id)sender;

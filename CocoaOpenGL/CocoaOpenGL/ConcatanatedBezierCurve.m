@@ -12,6 +12,9 @@
 
 @implementation ConcatanatedBezierCurve
 @synthesize targetBezier;
+@synthesize bezierCurves;
+@synthesize editing;
+
 const float kPerSegmentSampling = 50.0;
 
 -(id)init{
@@ -28,7 +31,6 @@ const float kPerSegmentSampling = 50.0;
     NSPoint point = [element pointValue];
     SingleBezierCurve * newCurve = [[SingleBezierCurve alloc] initWithAnchorPoint:point];
     
- 
     [bezierCurves addObject:newCurve]; // add bezier as an element
 }
 
@@ -36,11 +38,11 @@ const float kPerSegmentSampling = 50.0;
     NSPoint anchor = [[bezierCurves lastObject] anchorPoint];
     float distX = point.x - anchor.x;
     float distY = point.y - anchor.y;
-    NSPoint mirrored = NSMakePoint(anchor.x - distX, anchor.y - distY);
+    NSPoint mirroredPoint = NSMakePoint(anchor.x - distX, anchor.y - distY);
     
     SingleBezierCurve * lastCurve = [bezierCurves lastObject];
     [lastCurve setForwardHandle:point];
-    [lastCurve setBackwardHandle:mirrored];
+    [lastCurve setBackwardHandle:mirroredPoint];
 }
 
 - (void)rasterize{
@@ -48,6 +50,7 @@ const float kPerSegmentSampling = 50.0;
     [self calcBezier];
     [super rasterize]; // raster
 }
+
 
 -(void)calcBezier{
     if([bezierCurves count] < 2)
@@ -94,18 +97,36 @@ const float kPerSegmentSampling = 50.0;
 }
 
 
--(void)examineGrab:(NSPoint)location{
+-(BOOL)examineGrab:(NSPoint)location{
     if(targetBezier){
         [targetBezier resetTargetControlPoint];
     }
     for(SingleBezierCurve * curve in bezierCurves){
         if([curve examineGrab:location]){
             targetBezier = curve;
+            return YES;
             break;
         }
     }
+    return NO;
 }
 
+-(EControlPoint)targetControlPointOfTargetBezier{
+    if(targetBezier){
+        return [targetBezier targetControlPoint];
+    }
+    return ENoGrab;
+}
+
+-(void)removeTargetBezier{
+    if(targetBezier){
+        [bezierCurves removeObject:targetBezier];
+    }
+}
+
+-(void)resetHandleOfTargetBezier{
+    [targetBezier resetHandle];
+}
 
 -(void)eraseAll{
     [bezierCurves removeAllObjects];

@@ -12,13 +12,20 @@
 
 @interface ConcatanatedBezierCurve : DirectDraw 
 {
-    NSMutableArray * bezierCurves;
 }
 
 @property (retain) SingleBezierCurve * targetBezier;
+@property (retain) NSMutableArray * bezierCurves;
+@property (assign) BOOL editing;
 
 -(void)setHandleOfLastElement:(NSPoint)point;
-- (void)eraseAll;
-- (void)render;
--(void)examineGrab:(NSPoint)location;
+-(void)eraseAll;
+-(void)render;
+-(BOOL)examineGrab:(NSPoint)location;
+-(void)resetHandleOfTargetBezier;
+-(void)removeTargetBezier;
+-(BOOL)checkOverlapWithAnchorPoint:(EControlPoint)handle;
+
+-(EControlPoint)targetControlPointOfTargetBezier;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 typedef NS_ENUM(NSInteger, EControlPoint){
     EAnchorPoint,
@@ -16,22 +17,24 @@ typedef NS_ENUM(NSInteger, EControlPoint){
 };
 
 @interface SingleBezierCurve : NSObject{
-    EControlPoint targetControlPoint;
-    
 }
 
-
+@property (assign) EControlPoint targetControlPoint;
 @property (assign) BOOL enableForwardHandle;
 @property (assign) BOOL enableBackwardHandle;
+@property (assign) BOOL mirrorMode;
+
 @property (assign) NSPoint anchorPoint;
 @property (assign) NSPoint forwardHandle;
 @property (assign) NSPoint backwardHandle;
 @property (assign) SingleBezierCurve *nextBezierCurve;
 
 -(id)initWithAnchorPoint:(NSPoint)anchor;
--(void)renderControlPoints;
 -(BOOL)examineGrab:(NSPoint)point;
+-(BOOL)checkOverlapWithAnchorPoint;
 -(void)resetTargetControlPoint;
--(void)moveTargetControlPoint:(NSPoint)point;
+-(void)moveTargetControlPoint:(NSPoint)point withMirroring:(BOOL)mirroring;
+-(void)renderControlPoints;
+-(void)resetHandle;
 @end
 

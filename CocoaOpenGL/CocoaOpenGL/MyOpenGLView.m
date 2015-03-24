@@ -20,6 +20,15 @@
     return YES;
 }
 
+- (BOOL)shiftPressed{
+    NSEventModifierFlags modifier = [[NSApp currentEvent] modifierFlags];
+    return  (modifier & NSShiftKeyMask )? YES:NO;
+}
+
+- (BOOL)optionPressed{
+    NSEventModifierFlags modifier = [[NSApp currentEvent] modifierFlags];
+    return  (modifier & NSAlternateKeyMask )? YES:NO;
+}
 
 - (IBAction)play:(id)sender{
     phase = 0.0;
@@ -99,6 +108,9 @@
     }
     
 }
+
+
+
 -(void)reshape{
     halfX = [self frame].size.width / 2.0;
     halfY = [self frame].size.height / 2.0;
@@ -121,12 +133,15 @@
         [directDraw addElement:[NSValue valueWithPoint:location]];
         
     }else if(mode == EBezier){
-        NSEventModifierFlags modifier = [[NSApp currentEvent] modifierFlags];
-        BOOL shiftPressed = (modifier & NSShiftKeyMask )? YES:NO;
-        if (shiftPressed) {
+        if ([bezierCurve editing]) {
+            [[NSCursor closedHandCursor] set];
             SingleBezierCurve * targetBezier = [bezierCurve targetBezier];
             if(targetBezier){
-                [targetBezier moveTargetControlPoint:location];
+                if([self shiftPressed]){
+                    [targetBezier moveTargetControlPoint:location withMirroring:NO];
+                }else{
+                    [targetBezier moveTargetControlPoint:location withMirroring:YES];
+                }
             }
         }else{
             // new point
@@ -148,17 +163,46 @@
 - (void)mouseDown:(NSEvent *)theEvent{
     mousePressed = YES;
     NSPoint location = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    NSInteger clickCount = [theEvent clickCount];
+    
     [self normalize:&location];
-    NSEventModifierFlags modifier = [[NSApp currentEvent] modifierFlags];
-    BOOL shiftPressed = (modifier & NSShiftKeyMask )? YES:NO;
     switch (mode) {
         case EDirectDraw:
             [directDraw setRecording:YES];
             [directDraw addElement:[NSValue valueWithPoint:location]];
             break;
         case EBezier:
-            if(shiftPressed){
-                [bezierCurve examineGrab:location];
+            if([bezierCurve examineGrab:location]){
+                SingleBezierCurve * targetBezier = [bezierCurve targetBezier];
+
+                if([targetBezier checkOverlapWithAnchorPoint]){
+                    // not sure about the target that the user want to move
+                    
+                    if(clickCount > 1){
+                        // double click -> prioritize handle
+                        [targetBezier setTargetControlPoint:EForwardHandle];
+                    }else{
+                        [targetBezier setTargetControlPoint:EAnchorPoint];
+                    }
+                }
+                
+                [bezierCurve setEditing:YES];
+                [bezierCurve setRecording:YES];
+                if([self optionPressed]){
+                    switch([bezierCurve targetControlPointOfTargetBezier]){
+                        case EAnchorPoint:
+                            [bezierCurve removeTargetBezier];
+                            break;
+                        case EForwardHandle:
+                        case EBackwardHandle:
+                            [bezierCurve resetHandleOfTargetBezier];
+                            break;
+                        default:
+                            break;
+                    }
+                    
+                }
+                [[NSCursor closedHandCursor] set];
             }else{
                 [bezierCurve setRecording:YES];
                 [bezierCurve addElement:[NSValue valueWithPoint:location]];
@@ -180,13 +224,33 @@
             [directDraw rasterize];
             break;
         case EBezier:
+            [[bezierCurve targetBezier] setMirrorMode:NO];
+            [[bezierCurve targetBezier] setTargetControlPoint:ENoGrab];
             [bezierCurve setRecording:NO];
+            [bezierCurve setEditing:NO];
             [bezierCurve rasterize];
+            [self resetCursorRects];
+
+            for(SingleBezierCurve * curve in [bezierCurve bezierCurves]){
+                NSPoint pointInView;
+                pointInView= [self viewCoordFromNormalizedCoord:[curve anchorPoint]];
+                [self addCursorRect:NSMakeRect(pointInView.x -5, pointInView.y-5, 10, 10) cursor:[NSCursor openHandCursor]];
+                pointInView= [self viewCoordFromNormalizedCoord:[curve forwardHandle]];
+                [self addCursorRect:NSMakeRect(pointInView.x -5, pointInView.y-5, 10, 10) cursor:[NSCursor openHandCursor]];
+                pointInView= [self viewCoordFromNormalizedCoord:[curve backwardHandle]];
+                [self addCursorRect:NSMakeRect(pointInView.x -5, pointInView.y-5, 10, 10) cursor:[NSCursor openHandCursor]];
+            }
             break;
         case ESpline:
             break;
     }
     [self setNeedsDisplay:YES];
+}
+
+- (NSPoint)viewCoordFromNormalizedCoord:(NSPoint)normalizedCoord{
+    float halfWidth = [self bounds].size.width / 2;
+    float halfHeight = [self bounds].size.height /2;
+    return NSMakePoint(normalizedCoord.x * halfWidth + halfWidth, -normalizedCoord.y * halfHeight + halfHeight);
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -198,10 +262,15 @@
     
     NSDate *start = [NSDate date];
     
-    if(mode == EDirectDraw){
-        [directDraw render];
-    }else if(mode == EBezier){
-        [bezierCurve render];
+    switch (mode) {
+        case EDirectDraw:
+            [directDraw render];
+            break;
+        case EBezier:
+            [bezierCurve render];
+            break;
+        default:
+            break;
     }
     [self drawIDs];
     [[self openGLContext] flushBuffer];
